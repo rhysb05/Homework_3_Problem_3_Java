@@ -1,9 +1,9 @@
 public class GenericLinkedList <DATA> {
 
 
-        public int size = 0;
-        public GenericLinkedNode<DATA> head = null;
-        public GenericLinkedNode<DATA> tail = null;
+        private int size = 0;
+        private GenericLinkedNode<DATA> head = null;
+        private GenericLinkedNode<DATA> tail = null;
 
         //Add a node at the beginning of the linked list
         public void insertNodeAtBegin(DATA _value){
@@ -97,7 +97,6 @@ public class GenericLinkedList <DATA> {
         //inserted node.
         cursorNode.next.next = insertNode;
 
-
         //Increment the size of the list
         ++size;
 
@@ -126,7 +125,7 @@ public class GenericLinkedList <DATA> {
 
             }//end while (_index -1 != 0)
 
-            return newNode.value;
+            return newNode.getValue();
 
         }//end insertAtIndexPos(int index)
 
@@ -146,7 +145,7 @@ public class GenericLinkedList <DATA> {
             else {
                 for(int i = 0; i < getSize(); ++i){
 
-                    System.out.print(cursorNode.value + "\n");
+                    System.out.print(cursorNode.getValue() + "\n");
                     cursorNode = cursorNode.next;
 
                 }//end for (int i = size; i < size; ++i)
@@ -170,7 +169,7 @@ public class GenericLinkedList <DATA> {
 
         head = head.next;
 
-    }//end shiftByOn()
+    }//end shiftByOne()
 
     //This function shifts all the elements in the list by one.
     public void shiftByOneClockwise(){
